@@ -1,10 +1,16 @@
 <script setup>
-defineProps({
+const props = defineProps({
   task: {
     type: Object,
     required: true
   }
 })
+
+const emit = defineEmits(['delete'])
+
+function handleDelete() {
+  emit('delete', props.task.id)
+}
 </script>
 
 <template>
@@ -14,7 +20,7 @@ defineProps({
       <span class="checkbox-custom"></span>
     </label>
     <span class="task-text">{{ task.text }}</span>
-    <button class="delete-btn">删除</button>
+    <button class="delete-btn" @click="handleDelete">删除</button>
   </li>
 </template>
 

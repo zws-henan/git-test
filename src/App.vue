@@ -26,6 +26,11 @@ function handleAddTask(text) {
     completed: false
   })
 }
+
+// 删除任务
+function handleDeleteTask(id) {
+  tasks.value = tasks.value.filter(task => task.id !== id)
+}
 </script>
 
 <template>
@@ -35,7 +40,7 @@ function handleAddTask(text) {
     <main class="main">
       <AddTask @add="handleAddTask" />
       <TaskFilter />
-      <TaskList :tasks="tasks" />
+      <TaskList :tasks="tasks" @delete="handleDeleteTask" />
       <TaskStats :tasks="tasks" />
       <TaskActions />
     </main>

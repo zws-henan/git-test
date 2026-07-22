@@ -7,6 +7,8 @@ defineProps({
     default: () => []
   }
 })
+
+const emit = defineEmits(['delete'])
 </script>
 
 <template>
@@ -16,6 +18,7 @@ defineProps({
         v-for="task in tasks"
         :key="task.id"
         :task="task"
+        @delete="emit('delete', $event)"
       />
     </ul>
   </section>
