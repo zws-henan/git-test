@@ -10,7 +10,7 @@ import AppFooter from './components/AppFooter.vue'
 
 // 任务列表数据
 const tasks = ref([
-  { id: 1, text: '学习 JavaScript 基础语法', completed: false },
+  { id: 1, text: '学习 JavaScript 基础语法!!!!!!!!!!!!!', completed: false },
   { id: 2, text: '完成项目设计文档', completed: false },
   { id: 3, text: '回复邮件', completed: false },
   { id: 4, text: '购买日用品', completed: true },
@@ -26,6 +26,11 @@ function handleAddTask(text) {
     completed: false
   })
 }
+
+// 删除任务
+function handleDeleteTask(id) {
+  tasks.value = tasks.value.filter(task => task.id !== id)
+}
 </script>
 
 <template>
@@ -35,7 +40,7 @@ function handleAddTask(text) {
     <main class="main">
       <AddTask @add="handleAddTask" />
       <TaskFilter />
-      <TaskList :tasks="tasks" />
+      <TaskList :tasks="tasks" @delete="handleDeleteTask" />
       <TaskStats :tasks="tasks" />
       <TaskActions />
     </main>
