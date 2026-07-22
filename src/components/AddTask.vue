@@ -1,11 +1,27 @@
 <script setup>
+import { ref } from 'vue'
 
+const emit = defineEmits(['add'])
+
+const taskText = ref('')
+
+function handleAdd() {
+  if (!taskText.value.trim()) return
+  emit('add', taskText.value)
+  taskText.value = ''
+}
 </script>
 
 <template>
   <section class="add-task">
-    <input type="text" class="task-input" placeholder="请输入任务内容...">
-    <button class="add-btn">添加</button>
+    <input
+      type="text"
+      class="task-input"
+      v-model="taskText"
+      placeholder="请输入任务内容..."
+      @keyup.enter="handleAdd"
+    >
+    <button class="add-btn" @click="handleAdd">添加</button>
   </section>
 </template>
 

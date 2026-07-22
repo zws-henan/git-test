@@ -1,18 +1,22 @@
 <script setup>
 import TaskItem from './TaskItem.vue'
+
+defineProps({
+  tasks: {
+    type: Array,
+    default: () => []
+  }
+})
 </script>
 
 <template>
   <section class="task-list">
     <ul class="tasks">
-      <!-- 未完成任务 -->
-      <TaskItem text="学习 JavaScript 基础语法" />
-      <TaskItem text="完成项目设计文档" />
-      <TaskItem text="回复邮件" />
-
-      <!-- 已完成任务 -->
-      <TaskItem text="购买日用品" completed />
-      <TaskItem text="整理书桌" completed />
+      <TaskItem
+        v-for="task in tasks"
+        :key="task.id"
+        :task="task"
+      />
     </ul>
   </section>
 </template>

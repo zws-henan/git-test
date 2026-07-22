@@ -1,4 +1,5 @@
 <script setup>
+import { ref } from 'vue'
 import AppHeader from './components/AppHeader.vue'
 import AddTask from './components/AddTask.vue'
 import TaskFilter from './components/TaskFilter.vue'
@@ -6,6 +7,25 @@ import TaskList from './components/TaskList.vue'
 import TaskStats from './components/TaskStats.vue'
 import TaskActions from './components/TaskActions.vue'
 import AppFooter from './components/AppFooter.vue'
+
+// 任务列表数据
+const tasks = ref([
+  { id: 1, text: '学习 JavaScript 基础语法', completed: false },
+  { id: 2, text: '完成项目设计文档', completed: false },
+  { id: 3, text: '回复邮件', completed: false },
+  { id: 4, text: '购买日用品', completed: true },
+  { id: 5, text: '整理书桌', completed: true }
+])
+
+// 添加任务
+function handleAddTask(text) {
+  if (!text.trim()) return
+  tasks.value.push({
+    id: Date.now(),
+    text: text.trim(),
+    completed: false
+  })
+}
 </script>
 
 <template>
@@ -13,10 +33,10 @@ import AppFooter from './components/AppFooter.vue'
     <AppHeader />
 
     <main class="main">
-      <AddTask />
+      <AddTask @add="handleAddTask" />
       <TaskFilter />
-      <TaskList />
-      <TaskStats />
+      <TaskList :tasks="tasks" />
+      <TaskStats :tasks="tasks" />
       <TaskActions />
     </main>
 

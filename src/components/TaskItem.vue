@@ -1,23 +1,19 @@
 <script setup>
 defineProps({
-  text: {
-    type: String,
-    default: ''
-  },
-  completed: {
-    type: Boolean,
-    default: false
+  task: {
+    type: Object,
+    required: true
   }
 })
 </script>
 
 <template>
-  <li class="task-item" :class="{ completed }">
+  <li class="task-item" :class="{ completed: task.completed }">
     <label class="checkbox-wrap">
-      <input type="checkbox" :checked="completed">
+      <input type="checkbox" :checked="task.completed">
       <span class="checkbox-custom"></span>
     </label>
-    <span class="task-text">{{ text }}</span>
+    <span class="task-text">{{ task.text }}</span>
     <button class="delete-btn">删除</button>
   </li>
 </template>
