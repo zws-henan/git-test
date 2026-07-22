@@ -36,7 +36,7 @@ function handleCancel() {
     </label>
     <span class="task-text">{{ task.text }}</span>
     <div class="delete-wrap">
-      <button class="delete-btn" @click="handleDeleteClick">删除</button>
+      <button class="delete-btn" @click="handleDeleteClick">删除！！！！！</button>
       <ConfirmDialog
         :visible="confirming"
         message="确定要删除这条任务吗？"
