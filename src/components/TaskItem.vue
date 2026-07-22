@@ -1,4 +1,7 @@
 <script setup>
+import { ref } from 'vue'
+import ConfirmDialog from './ConfirmDialog.vue'
+
 const props = defineProps({
   task: {
     type: Object,
@@ -8,8 +11,20 @@ const props = defineProps({
 
 const emit = defineEmits(['delete'])
 
-function handleDelete() {
+const confirming = ref(false)
+
+// 点击删除：先弹出气泡确认框，不直接删除
+function handleDeleteClick() {
+  confirming.value = true
+}
+
+function handleConfirm() {
+  confirming.value = false
   emit('delete', props.task.id)
+}
+
+function handleCancel() {
+  confirming.value = false
 }
 </script>
 
@@ -20,7 +35,17 @@ function handleDelete() {
       <span class="checkbox-custom"></span>
     </label>
     <span class="task-text">{{ task.text }}</span>
-    <button class="delete-btn" @click="handleDelete">删除</button>
+    <div class="delete-wrap">
+      <button class="delete-btn" @click="handleDeleteClick">删除</button>
+      <ConfirmDialog
+        :visible="confirming"
+        message="确定要删除这条任务吗？"
+        @confirm="handleConfirm"
+        @cancel="handleCancel"
+      />
+    </div>
+    <!-- 点击气泡外部时关闭 -->
+    <div v-if="confirming" class="outside-catch" @click="handleCancel"></div>
   </li>
 </template>
 
@@ -117,6 +142,21 @@ function handleDelete() {
 .delete-btn:hover {
     background: #ff6b6b;
     color: #fff;
+}
+
+/* 删除按钮容器：作为气泡框的定位锚点 */
+.delete-wrap {
+    position: relative;
+}
+
+/* 透明遮罩：点击气泡外部时关闭，不影响气泡自身交互 */
+.outside-catch {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
 }
 
 @media (max-width: 480px) {
