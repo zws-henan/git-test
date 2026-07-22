@@ -31,12 +31,12 @@ const emit = defineEmits(['confirm', 'cancel'])
     position: absolute;
     top: calc(100% + 10px);
     right: 0;
-    background: #fff;
-    border: 1px solid #ececf2;
+    background: #2d3139;
+    border: 1px solid #3a3f4a;
     border-radius: 12px;
     padding: 14px 16px;
     width: 220px;
-    box-shadow: 0 8px 24px rgba(102, 126, 234, 0.18);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
     z-index: 1000;
 }
 
@@ -47,16 +47,16 @@ const emit = defineEmits(['confirm', 'cancel'])
     right: 18px;
     width: 12px;
     height: 12px;
-    background: #fff;
-    border-top: 1px solid #ececf2;
-    border-left: 1px solid #ececf2;
+    background: #2d3139;
+    border-top: 1px solid #3a3f4a;
+    border-left: 1px solid #3a3f4a;
     transform: rotate(45deg);
     border-top-left-radius: 3px;
 }
 
 .bubble-message {
     font-size: 14px;
-    color: #333;
+    color: #e4e6eb;
     margin-bottom: 12px;
     line-height: 1.5;
 }
@@ -78,16 +78,16 @@ const emit = defineEmits(['confirm', 'cancel'])
 }
 
 .cancel-btn {
-    background: #f0f0f0;
-    color: #666;
+    background: #3a3f4a;
+    color: #e4e6eb;
 }
 
 .cancel-btn:hover {
-    background: #e4e4e4;
+    background: #4a5060;
 }
 
 .confirm-btn {
-    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);
+    background: linear-gradient(135deg, #c9696e 0%, #a85a5e 100%);
     color: #fff;
 }
 
