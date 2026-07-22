@@ -23,12 +23,12 @@ defineProps({
     display: flex;
     align-items: center;
     padding: 16px 0;
-    border-bottom: 1px solid #f0f0f0;
+    border-bottom: 1px solid #3a3f4a;
     transition: background-color 0.2s ease;
 }
 
 .task-item:hover {
-    background-color: #fafafa;
+    background-color: #2d3139;
 }
 
 .task-item:last-child {
@@ -55,14 +55,14 @@ defineProps({
     display: block;
     width: 22px;
     height: 22px;
-    border: 2px solid #d0d0d0;
+    border: 2px solid #4a5060;
     border-radius: 50%;
     position: relative;
     transition: all 0.3s ease;
 }
 
 .checkbox-wrap input[type="checkbox"]:checked ~ .checkbox-custom {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #3d4a6b 0%, #4a3d6b 100%);
     border-color: transparent;
 }
 
@@ -73,7 +73,7 @@ defineProps({
     top: 2px;
     width: 6px;
     height: 11px;
-    border: solid #fff;
+    border: solid #e4e6eb;
     border-width: 0 2px 2px 0;
     transform: rotate(45deg);
 }
@@ -82,12 +82,12 @@ defineProps({
 .task-text {
     flex: 1;
     font-size: 15px;
-    color: #333;
+    color: #e4e6eb;
     transition: all 0.3s ease;
 }
 
 .task-item.completed .task-text {
-    color: #aaa;
+    color: #6b7280;
     text-decoration: line-through;
 }
 
@@ -95,8 +95,8 @@ defineProps({
 .delete-btn {
     padding: 6px 14px;
     background: transparent;
-    color: #ff6b6b;
-    border: 1px solid #ff6b6b;
+    color: #c9696e;
+    border: 1px solid #c9696e;
     border-radius: 6px;
     font-size: 13px;
     cursor: pointer;
@@ -109,8 +109,8 @@ defineProps({
 }
 
 .delete-btn:hover {
-    background: #ff6b6b;
-    color: #fff;
+    background: #c9696e;
+    color: #e4e6eb;
 }
 
 @media (max-width: 480px) {

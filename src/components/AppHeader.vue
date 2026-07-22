@@ -11,10 +11,11 @@
 
 <style scoped>
 .header {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: #fff;
+    background: linear-gradient(135deg, #2d3548 0%, #3d2d48 100%);
+    color: #e4e6eb;
     padding: 30px 40px;
     text-align: center;
+    border-bottom: 1px solid #3a3f4a;
 }
 
 .title {

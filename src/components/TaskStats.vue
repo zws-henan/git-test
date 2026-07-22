@@ -30,23 +30,24 @@ const uncompletedCount = computed(() => total.value - completedCount.value)
     align-items: center;
     gap: 12px;
     padding: 16px;
-    background: #f9f9f9;
+    background: #2a2e37;
     border-radius: 8px;
     margin-bottom: 16px;
+    border: 1px solid #3a3f4a;
 }
 
 .stat-text {
     font-size: 14px;
-    color: #666;
+    color: #9ca3af;
 }
 
 .stat-text strong {
-    color: #667eea;
+    color: #7c8db5;
     font-weight: 600;
 }
 
 .stat-divider {
-    color: #ddd;
+    color: #4a5060;
 }
 
 @media (max-width: 480px) {

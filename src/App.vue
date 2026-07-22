@@ -56,9 +56,9 @@ function handleAddTask(text) {
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
                  "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: #1a1d24;
     min-height: 100vh;
-    color: #333;
+    color: #e4e6eb;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -69,10 +69,11 @@ body {
 .container {
     width: 100%;
     max-width: 600px;
-    background: #fff;
+    background: #252932;
     border-radius: 16px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
     overflow: hidden;
+    border: 1px solid #3a3f4a;
 }
 
 /* 主体内容 */

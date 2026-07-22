@@ -11,13 +11,13 @@
 <style scoped>
 .footer {
     padding: 20px 40px;
-    background: #fafafa;
+    background: #22262e;
     text-align: center;
-    border-top: 1px solid #f0f0f0;
+    border-top: 1px solid #3a3f4a;
 }
 
 .footer p {
     font-size: 13px;
-    color: #999;
+    color: #6b7280;
 }
 </style>

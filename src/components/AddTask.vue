@@ -35,22 +35,28 @@ function handleAdd() {
 .task-input {
     flex: 1;
     padding: 14px 18px;
-    border: 2px solid #e0e0e0;
+    background: #2a2e37;
+    border: 2px solid #3a3f4a;
     border-radius: 8px;
     font-size: 15px;
+    color: #e4e6eb;
     transition: border-color 0.3s ease;
     outline: none;
 }
 
+.task-input::placeholder {
+    color: #6b7280;
+}
+
 .task-input:focus {
-    border-color: #667eea;
+    border-color: #7c8db5;
 }
 
 .add-btn {
     padding: 14px 28px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: #fff;
-    border: none;
+    background: linear-gradient(135deg, #3d4a6b 0%, #4a3d6b 100%);
+    color: #e4e6eb;
+    border: 1px solid #4a5068;
     border-radius: 8px;
     font-size: 15px;
     font-weight: 600;

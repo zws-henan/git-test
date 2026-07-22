@@ -19,7 +19,7 @@
 .clear-all-btn {
     flex: 1;
     padding: 12px;
-    border: none;
+    border: 1px solid #3a3f4a;
     border-radius: 8px;
     font-size: 14px;
     font-weight: 500;
@@ -28,20 +28,22 @@
 }
 
 .clear-btn {
-    background: #fff3cd;
-    color: #856404;
+    background: #3d3826;
+    color: #c8a96a;
+    border-color: #5a4d2a;
 }
 
 .clear-btn:hover {
-    background: #ffeaa7;
+    background: #4a4230;
 }
 
 .clear-all-btn {
-    background: #f8d7da;
-    color: #721c24;
+    background: #3d2629;
+    color: #c9696e;
+    border-color: #5a2a2e;
 }
 
 .clear-all-btn:hover {
-    background: #fab1a0;
+    background: #4a3033;
 }
 </style>
