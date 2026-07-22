@@ -1,0 +1,31 @@
+{
+	"folders": [
+		{
+			"path": "../../.."
+		},
+		{
+			"name": "git详情版/test1: main",
+			"path": "../../test1"
+		}
+	],
+	"settings": {
+		"sqltools.connections": [
+			{
+				"mysqlOptions": {
+					"authProtocol": "default",
+					"enableSsl": "Disabled"
+				},
+				"previewLimit": 50,
+				"server": "localhost",
+				"port": 3307,
+				"driver": "MySQL",
+				"name": "zwswu",
+				"group": "zwswu",
+				"database": "zwswu",
+				"username": "root",
+				"password": ""
+			}
+		],
+		"liveServer.settings.port": 5502
+	}
+}
